@@ -1,24 +1,14 @@
-ssh-aget
-ssh-add ~/.ssh/appuser
-ssh -o ProxyCommand="ssh -W %h:%p appuser@35.204.117.29"  -A appuser@10.164.0.3
-Через бастион ходим так
+# Hravn_infra
+Hravn Infra repository
 
-Для доступа по алиасу добавляем в  ~/.ssh/config слудующий конфиг
+Для работы с packer не всё необходимое находится в директории ./packer
 
-Host someinternalhost
-	Hostname 10.164.0.3
-	User appuser
-	ProxyCommand ssh -W %h:%p appuser@35.204.117.29
+- ubuntu16.json - собирает дефолтный образ без приложения
+- immutable.json - собирает образ с готовым приложением в автозагрузке
+- variables.json.example -  набор дефотных пропертей 
 
-дальше ходим ssh someinternalhost
+Список обязательных пропертей
 
-Ну и для удобства добавляем  конфиг бастиона. 
-
-Host bastion
-	Hostname 35.204.117.29
-	User appuser
-
-
-bastion_IP = 35.204.117.29
-someinternalhost_IP = 10.164.0.3
+- proj_id - id вашего проекта
+- src_img - исходный образ системы
 

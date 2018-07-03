@@ -1,0 +1,10 @@
+{
+    "proj_id": "lateral-diagram-xxxxxx",
+	"src_img": "ubuntu-1604-lts",
+    "machine_t" : "f1-micro",
+    "decription": "{{timestamp}}",
+    "disk_size": "10",
+    "disk_type": "pd-standard",
+    "network": "default",
+    "tags": "redis"
+}
