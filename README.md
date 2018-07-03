@@ -12,4 +12,3 @@ Hravn Infra repository
 - proj_id - id вашего проекта
 - src_img - исходный образ системы
 
-
