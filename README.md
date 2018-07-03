@@ -1,20 +1,15 @@
 # Hravn_infra
 Hravn Infra repository
 
-Run instanse.
-cp $MY_REPO
-gcloud compute instances create reddit-app-full \
---boot-disk-size=10GB \
---source-image=reddit-full \
---image-project=lateral-diagram-208309 \
---machine-type=g1-small \
---tags puma-server \
---restart-on-failure \
---zone europe-west1-b
+Для работы с packer не всё необходимое находится в директории ./packer
 
-Add FW rule
-gcloud compute firewall-rules create default-puma-server --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:9292 --source-ranges=0.0.0.0/0 --target-tags=puma-server
+- ubuntu16.json - собирает дефолтный образ без приложения
+- immutable.json - собирает образ с готовым приложением в автозагрузке
+- variables.json.example -  набор дефотных пропертей 
 
-testapp_IP=35.204.124.180
-testapp_port=9292
+Список обязательных пропертей
+
+- proj_id - id вашего проекта
+- src_img - исходный образ системы
+
 

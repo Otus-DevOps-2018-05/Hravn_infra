@@ -1,7 +1,7 @@
 {
     "variables": {
-        "proj_id" : "lateral-diagram-208309",
-        "src_img" : "ubuntu-1604-lts",
+        "proj_id" : null,
+        "src_img" : null,
         "machine_t" : "f1-micro",
         "decription": "TEST",
         "disk_size": "10",
